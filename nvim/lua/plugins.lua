@@ -39,7 +39,13 @@ require("lazy").setup({
 
     -- snip
     { 'hrsh7th/cmp-vsnip', name = "cmp-vsnip" },
-    { 'hrsh7th/vim-vsnip', name = "vim-vsnip" }
+    { 'hrsh7th/vim-vsnip', name = "vim-vsnip" },
+
+    -- treesitter
+    { 'nvim-treesitter/nvim-treesitter', name = "treesitter" },
+
+    -- ale
+    { 'dense-analysis/ale', name = 'ale' }
 
 })
 
@@ -114,4 +120,26 @@ require('nvim-cmp')
 -- require('lspconfig').tsserver.setup{}
 
 
+require'nvim-treesitter'.setup {
+    ensure_installed = { 'lua', 'typescript' },
 
+    sync_install = false,
+
+    auto_install = true,
+
+    highlight = {
+        enable = true,
+
+        additional_vim_regex_highlighting = false,
+
+    }
+}
+
+
+-- ale
+-- vim.b.ale_fixers:{"typescript":"eslint"};
+-- vim.api.nvim_set_var('ale_lint_on_save', 1)
+vim.g.ale_fixers = { typescript = { 'eslint' } }
+vim.g.ale_lint_on_save = 1
+-- vim.b.ale_fixers = {'typescript': ['eslint'] }
+--let g:ale_fix_on_save = 1
