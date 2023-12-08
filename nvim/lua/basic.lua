@@ -20,14 +20,14 @@ vim.wo.signcolumn = "yes"
 vim.wo.colorcolumn = "80"
 
 -- 缩进4个空格等于一个tab
-vim.o.tabstop = 4
-vim.bo.tabstop = 4
-vim.softtabstop = 4
+vim.o.tabstop = 2
+vim.bo.tabstop = 2
+vim.softtabstop = 2
 vim.o.shiftround = true
 
 -- >> << 移动长度
-vim.o.shiftwidth = 4
-vim.bo.shiftwidth = 4
+vim.o.shiftwidth = 2
+vim.bo.shiftwidth = 2
 
 -- 新行对齐当前行，空格代替tab
 vim.o.expandtab = true
